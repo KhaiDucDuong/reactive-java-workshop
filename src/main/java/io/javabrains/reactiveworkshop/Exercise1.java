@@ -37,10 +37,15 @@ public class Exercise1 {
 
         // Print first names of all users in userStream
         // TODO: Write code here
+        System.out.println("PROBLEM 5");
+        StreamSources.userStream().forEach(user -> System.out.println(user.getFirstName()));
 
         // Print first names in userStream for users that have IDs from number stream
         // TODO: Write code here
-
+        System.out.println("PROBLEM 6");
+        StreamSources.userStream()
+                .filter(user -> StreamSources.intNumbersStream().anyMatch(num -> num == user.getId()))
+                .forEach(user -> System.out.println(user.getFirstName()));
     }
 
 }
